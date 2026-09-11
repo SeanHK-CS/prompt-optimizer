@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  @apply bg-bg text-ink font-mono antialiased;
+}
+
+textarea::placeholder { color: #6b6450; }
+textarea:focus { outline: none; border-color: #e8a13a; }
+
+.grain {
+  position: fixed; inset: 0; pointer-events: none; opacity: 0.05; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.bar { transition: width 0.7s cubic-bezier(.2,.8,.2,1); }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: rgba(236,229,212,0.10); border-radius: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bar { transition: none; }
+}
