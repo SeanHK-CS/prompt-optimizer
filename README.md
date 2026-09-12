@@ -66,6 +66,14 @@ pnpm test:promptschat "write a cold email to a recruiter"   # needs network
 
 Set `PROMPTS_CHAT_API_KEY` later if you want `save_prompt` or private prompts; search works without it.
 
+## Install the Skill
+
+**Claude.ai:** download [`dist/prompt-optimizer.skill`](dist/prompt-optimizer.skill), then Settings, Skills, upload. Optional: add the prompts.chat connector (Settings, Connectors, custom, `https://prompts.chat/api/mcp`) to get community templates.
+
+**Claude Code:** copy `skill/` to `~/.claude/skills/prompt-optimizer/`, then `claude mcp add --transport http prompts-chat https://prompts.chat/api/mcp`.
+
+The `.skill` file is a zip of `skill/`. Rebuild it after any change: `cd skill && zip -r ../dist/prompt-optimizer.skill .`
+
 ## License
 
 Code: MIT. Community prompts fetched at runtime are CC0 per prompts.chat.
